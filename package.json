@@ -1,7 +1,7 @@
 {
   "name": "weather-app",
   "version": "0.1.0",
-  "homepage": "https://github.com/opv1/weather-app/",
+  "homepage": "https://github.com/opv1/weather-app",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
