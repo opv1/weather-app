@@ -5,9 +5,9 @@
 
 ## Description
 
-Stack: Vue
+Stack: Vue.js
 
-## [See the project]()
+## [See the project](https://opv1.github.io/weather-app/)
 
 ## Setup
 
