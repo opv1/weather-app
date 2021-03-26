@@ -2,8 +2,8 @@
   <form class="search">
     <input
       class="search__input"
-      type="text"
       v-model="input"
+      type="text"
       :placeholder="placeholder"
     />
     <button class="search__button" @click.prevent="searchWeather(input)">

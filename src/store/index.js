@@ -1,28 +1,19 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { requestFetch } from '@/utils/requestFetch'
-import { getIcon } from '@/utils/getIcon'
+import { createWeather } from '@/utils/createWeather'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     loading: false,
-    message: '',
+    message: { display: false, text: '' },
     dataWeather: {},
-    weatherIcons: {
-      Thunderstorm: 'wi-thunderstorm',
-      Drizzle: 'wi-sleet',
-      Rain: 'wi-storm-showers',
-      Snow: 'wi-snow',
-      Atmosphere: 'wi-fog',
-      Clear: 'wi-day-sunny',
-      Clouds: 'wi-day-fog',
-    },
   },
   mutations: {
     setMessage(state, payload) {
-      state.message = payload
+      state.message = { ...payload }
     },
     setDataWeather(state, payload) {
       state.dataWeather = payload
@@ -41,55 +32,43 @@ export default new Vuex.Store({
               `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}`
             )
 
-            const weather = {
-              city: data.name,
-              country: data.sys.country,
-              description: data.weather[0].description.toUpperCase(),
-              fahrenheit: data.main.temp,
-              icon: getIcon(this.state.weatherIcons, data.weather[0].id),
-              main: data.weather[0].main,
-              tempMax: data.main.temp_max,
-              tempMin: data.main.temp_min,
-            }
+            const weather = createWeather(data)
 
             context.commit('setDataWeather', weather)
           } catch (err) {
-            context.commit('setMessage', err)
+            context.commit('setMessage', { display: true, text: err })
           }
         },
         (error) => {
-          context.commit(
-            'setMessage',
-            'Please turn on geolocation or use the search'
-          )
+          context.commit('setMessage', {
+            display: true,
+            text: 'Please turn on geolocation or use the search',
+          })
         }
       )
     },
     async searchWeather(context, city) {
       try {
-        if (city === '') {
-          console.log('empty value')
-          return
+        if (!city) {
+          return context.commit('setMessage', {
+            display: true,
+            text: 'Please enter city',
+          })
         }
+
         const data = await requestFetch(
           `https://api.openweathermap.org/data/2.5/weather?q=${city}`
         )
 
-        const weather = {
-          city: data.name,
-          country: data.sys.country,
-          description: data.weather[0].description.toUpperCase(),
-          fahrenheit: data.main.temp,
-          icon: getIcon(this.state.weatherIcons, data.weather[0].id),
-          main: data.weather[0].main,
-          tempMax: data.main.temp_max,
-          tempMin: data.main.temp_min,
-        }
+        const weather = createWeather(data)
 
         context.commit('setDataWeather', weather)
       } catch (err) {
-        context.commit('setMessage', err)
+        context.commit('setMessage', { display: true, text: err })
       }
+    },
+    changeUnit() {
+      this.state.dataWeather.temp.celsius = !this.state.dataWeather.temp.celsius
     },
   },
   modules: {},

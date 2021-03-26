@@ -5,7 +5,7 @@
       {{ $store.getters.getDataWeather.country }}
     </h1>
     <i
-      :class="['location__icon', 'wi', $store.getters.getDataWeather.icon]"
+      :class="['location__icon', `wi ${$store.getters.getDataWeather.icon}`]"
     ></i>
   </div>
 </template>

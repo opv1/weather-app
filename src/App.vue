@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <span class="message">{{ $store.getters.getMessage }}</span>
+    <span class="message" v-show="$store.getters.getMessage.display">{{
+      $store.getters.getMessage.text
+    }}</span>
     <Search />
     <Weather />
   </div>
