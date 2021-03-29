@@ -3,35 +3,35 @@
     <h2
       class="temperature__degree"
       @click="changeUnit"
-      v-if="$store.getters.getDataWeather.temp.celsius === true"
+      v-if="weather.temp.celsius === true"
     >
-      {{ $store.getters.getDataWeather.temp.tempC }} &deg;C
+      {{ weather.temp.tempC }} &deg;C
     </h2>
     <h2 class="temperature__degree" @click="changeUnit" v-else>
-      {{ $store.getters.getDataWeather.temp.tempF }} &deg;F
+      {{ weather.temp.tempK }} &deg;K
     </h2>
-    <div
-      class="temperature__block"
-      v-if="$store.getters.getDataWeather.temp.celsius === true"
-    >
-      <span>{{ $store.getters.getDataWeather.temp.tempMinC }} &deg;C</span>
-      <span>{{ $store.getters.getDataWeather.temp.tempMaxC }} &deg;C</span>
+    <div class="temperature__block" v-if="weather.temp.celsius === true">
+      <span>{{ weather.temp.tempMinC }} &deg;C</span>
+      <span>{{ weather.temp.tempMaxC }} &deg;C</span>
     </div>
     <div class="temperature__block" v-else>
-      <span>{{ $store.getters.getDataWeather.temp.tempMinF }} &deg;F</span>
-      <span>{{ $store.getters.getDataWeather.temp.tempMaxF }} &deg;F</span>
+      <span>{{ weather.temp.tempMinK }} &deg;K</span>
+      <span>{{ weather.temp.tempMaxK }} &deg;K</span>
     </div>
     <p class="temperature__description">
-      {{ $store.getters.getDataWeather.description }}
+      {{ weather.description }}
     </p>
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'Temperature',
+  computed: {
+    ...mapGetters(['weather']),
+  },
   methods: {
     ...mapActions(['changeUnit']),
   },
@@ -44,7 +44,7 @@ export default {
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
-  height: 15vh;
+  height: 50%;
 }
 
 .temperature__degree {
@@ -52,6 +52,13 @@ export default {
   color: #fff;
   font-size: 2rem;
   cursor: pointer;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+.temperature__degree:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .temperature__block {
@@ -60,7 +67,7 @@ export default {
 }
 
 .temperature__block span {
-  margin: 0 1rem;
+  margin: 1rem;
   color: #fff;
 }
 

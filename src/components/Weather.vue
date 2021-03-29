@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
 import Location from '@/components/Location'
 import Temperature from '@/components/Temperature'
 
@@ -16,12 +15,6 @@ export default {
     Location,
     Temperature,
   },
-  methods: {
-    ...mapActions(['preloadWeather']),
-  },
-  beforeMount() {
-    this.preloadWeather()
-  },
 }
 </script>
 
@@ -30,6 +23,8 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  justify-content: space-around;
+  margin: 1rem;
+  height: 50vh;
 }
 </style>

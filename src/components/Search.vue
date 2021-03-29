@@ -2,11 +2,11 @@
   <form class="search">
     <input
       class="search__input"
-      v-model="input"
+      v-model="value"
       type="text"
       :placeholder="placeholder"
     />
-    <button class="search__button" @click.prevent="searchWeather(input)">
+    <button class="search__button" @click.prevent="searchWeather(value)">
       Search
     </button>
   </form>
@@ -18,7 +18,7 @@ import { mapActions } from 'vuex'
 export default {
   name: 'Search',
   data: () => ({
-    input: '',
+    value: '',
     placeholder: 'Enter city',
   }),
   methods: {
@@ -31,8 +31,7 @@ export default {
 .search {
   display: flex;
   align-items: center;
-
-  padding: 1rem;
+  margin: 1rem;
 }
 
 .search__input {

@@ -1,5 +1,4 @@
 import { getIcon } from '@/utils/getIcon'
-import { toCelsius } from '@/utils/toCelsius'
 
 export const createWeather = (data) => {
   const weatherIcons = {
@@ -12,6 +11,10 @@ export const createWeather = (data) => {
     Clouds: 'wi-day-fog',
   }
 
+  const toCelsius = (temp) => {
+    return Math.floor(temp - 273.15)
+  }
+
   const dataWeather = {
     city: data.name,
     country: data.sys.country,
@@ -21,11 +24,11 @@ export const createWeather = (data) => {
     temp: {
       celsius: true,
       tempC: toCelsius(data.main.temp),
-      tempF: data.main.temp,
+      tempK: data.main.temp,
       tempMinC: toCelsius(data.main.temp_min),
       tempMaxC: toCelsius(data.main.temp_max),
-      tempMinF: data.main.temp_min,
-      tempMaxF: data.main.temp_max,
+      tempMinK: data.main.temp_min,
+      tempMaxK: data.main.temp_max,
     },
   }
 

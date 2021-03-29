@@ -1,18 +1,21 @@
 <template>
   <div class="location">
     <h1 class="location__timezone">
-      {{ $store.getters.getDataWeather.city }},
-      {{ $store.getters.getDataWeather.country }}
+      {{ weather.city }},
+      {{ weather.country }}
     </h1>
-    <i
-      :class="['location__icon', `wi ${$store.getters.getDataWeather.icon}`]"
-    ></i>
+    <i :class="['location__icon', `wi ${weather.icon}`]"></i>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Location',
+  computed: {
+    ...mapGetters(['weather']),
+  },
 }
 </script>
 
@@ -24,7 +27,7 @@ export default {
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
-  height: 30vh;
+  height: 100%;
 }
 
 .location__timezone {
@@ -34,7 +37,13 @@ export default {
 }
 
 .location__icon {
+  display: block;
   color: #fff;
   font-size: 7rem;
+  margin: 1rem;
+}
+
+.location__icon::before {
+  display: block;
 }
 </style>
