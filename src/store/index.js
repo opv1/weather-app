@@ -11,10 +11,7 @@ export default new Vuex.Store({
     loading: true,
     message: { display: false, text: null },
     weather: {},
-    units: {
-      current: 'C',
-      array: ['C', 'K', 'F'],
-    },
+    units: { current: 'C', array: ['C', 'K', 'F'] },
   },
   mutations: {
     setLoading(state, payload) {
