@@ -18,12 +18,12 @@ export const createWeather = (data) => {
     icon: getIcon(weatherIcons, data.weather[0].id),
     main: data.weather[0].main,
     temp: {
-      immutableTemp: data.main.temp,
-      immutableTempMin: data.main.temp_min,
-      immutableTempMax: data.main.temp_max,
-      temp: data.main.temp,
-      tempMin: data.main.temp_min,
-      tempMax: data.main.temp_max,
+      immutableTemp: Math.round(data.main.temp),
+      immutableTempMin: Math.round(data.main.temp_min),
+      immutableTempMax: Math.round(data.main.temp_max),
+      temp: Math.round(data.main.temp),
+      tempMin: Math.round(data.main.temp_min),
+      tempMax: Math.round(data.main.temp_max),
     },
   }
 

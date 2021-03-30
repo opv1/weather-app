@@ -1,3 +1,3 @@
-export const toKelvin = (temp) => (temp + 273.15).toFixed(1)
+export const toKelvin = (temp) => Math.round(temp + 273.15)
 
-export const toFahrenheit = (temp) => (temp * 1.8 + 32).toFixed(1)
+export const toFahrenheit = (temp) => Math.round(temp * 1.8 + 32)
