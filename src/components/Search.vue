@@ -35,13 +35,11 @@ export default {
 
   &__input {
     outline: none;
-    border: none;
-    border-radius: 10px;
-    background: transparent;
     border: 1px solid #eee;
     border-radius: 10px;
-    color: #fff;
     padding: 0.5rem 1rem;
+    color: #fff;
+    background: transparent;
 
     &::placeholder {
       color: #fff;
@@ -49,15 +47,15 @@ export default {
   }
 
   &__button {
+    margin-left: 1rem;
     outline: none;
     border: 1px solid transparent;
-    color: #fff;
-    background: none;
-    cursor: pointer;
-    margin-left: 1rem;
-    transition: border 0.3s;
     border-radius: 10px;
     padding: 0.5rem 1rem;
+    color: #fff;
+    background: none;
+    transition: border 0.3s;
+    cursor: pointer;
 
     &:hover {
       border: 1px solid #eee;

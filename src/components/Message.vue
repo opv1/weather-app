@@ -18,10 +18,10 @@ export default {
 <style lang="scss" scoped>
 .message {
   height: 30px;
-  transition: opacity 0.3s;
-  opacity: 1;
-  color: #fff;
   font-size: 1.5rem;
+  color: #fff;
+  opacity: 1;
+  transition: opacity 0.3s;
 
   &__hide {
     opacity: 0;

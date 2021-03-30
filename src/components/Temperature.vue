@@ -30,19 +30,19 @@ export default {
 <style lang="scss" scoped>
 .temperature {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   justify-content: space-around;
   height: 50%;
 
   &__degree {
     margin: 0;
-    color: #fff;
-    font-size: 2rem;
-    cursor: pointer;
-    padding: 1rem 2rem;
     border-radius: 10px;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    color: #fff;
     transition: background 0.3s;
+    cursor: pointer;
 
     &:hover {
       background: rgba(255, 255, 255, 0.3);
@@ -60,9 +60,9 @@ export default {
   }
 
   &__description {
-    color: #fff;
     margin: 0;
     font-size: 1.5rem;
+    color: #fff;
   }
 }
 </style>

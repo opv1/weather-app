@@ -22,23 +22,23 @@ export default {
 <style lang="scss" scoped>
 .location {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   justify-content: space-around;
   height: 100%;
 
   &__timezone {
     margin: 0;
     margin-bottom: 1rem;
-    color: #fff;
     font-size: 3rem;
+    color: #fff;
   }
 
   &__icon {
     display: block;
-    color: #fff;
-    font-size: 7rem;
     margin: 2rem;
+    font-size: 7rem;
+    color: #fff;
   }
 }
 </style>

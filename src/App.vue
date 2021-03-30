@@ -37,6 +37,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~normalize.css';
 @import '~weather-icons/css/weather-icons.css';
 
 * {
@@ -44,19 +45,19 @@ export default {
 }
 
 body {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
   background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
 }
 
 .app {
-  min-width: 320px;
-  max-width: 1440px;
-  margin: auto;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: auto;
+  height: 100vh;
+  min-width: 320px;
+  max-width: 1440px;
 
   &__container {
     display: flex;
