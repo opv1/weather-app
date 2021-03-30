@@ -15,14 +15,16 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .message {
   height: 30px;
   transition: opacity 0.3s;
   opacity: 1;
-}
+  color: #fff;
+  font-size: 1.5rem;
 
-.message__hide {
-  opacity: 0;
+  &__hide {
+    opacity: 0;
+  }
 }
 </style>

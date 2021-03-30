@@ -11,10 +11,6 @@ export const createWeather = (data) => {
     Clouds: 'wi-day-fog',
   }
 
-  const toCelsius = (temp) => {
-    return Math.floor(temp - 273.15)
-  }
-
   const dataWeather = {
     city: data.name,
     country: data.sys.country,
@@ -22,13 +18,12 @@ export const createWeather = (data) => {
     icon: getIcon(weatherIcons, data.weather[0].id),
     main: data.weather[0].main,
     temp: {
-      celsius: true,
-      tempC: toCelsius(data.main.temp),
-      tempK: data.main.temp,
-      tempMinC: toCelsius(data.main.temp_min),
-      tempMaxC: toCelsius(data.main.temp_max),
-      tempMinK: data.main.temp_min,
-      tempMaxK: data.main.temp_max,
+      immutableTemp: data.main.temp,
+      immutableTempMin: data.main.temp_min,
+      immutableTempMax: data.main.temp_max,
+      temp: data.main.temp,
+      tempMin: data.main.temp_min,
+      tempMax: data.main.temp_max,
     },
   }
 

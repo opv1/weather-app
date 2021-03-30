@@ -1,9 +1,11 @@
 <template>
-  <div id="app">
+  <div id="app" class="app">
     <Message />
     <Search />
-    <Loader v-if="loading" />
-    <Weather v-else />
+    <div class="app__container">
+      <Loader v-if="loading" />
+      <Weather v-else />
+    </div>
   </div>
 </template>
 
@@ -34,7 +36,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '~weather-icons/css/weather-icons.css';
+
 * {
   box-sizing: border-box;
 }
@@ -44,7 +48,7 @@ body {
   background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
 }
 
-#app {
+.app {
   min-width: 320px;
   max-width: 1440px;
   margin: auto;
@@ -53,10 +57,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
 
-.message {
-  color: #fff;
-  font-size: 1.5rem;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+  }
 }
 </style>

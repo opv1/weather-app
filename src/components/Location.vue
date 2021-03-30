@@ -19,31 +19,26 @@ export default {
 }
 </script>
 
-<style scoped>
-@import '~weather-icons/css/weather-icons.css';
-
+<style lang="scss" scoped>
 .location {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
-}
 
-.location__timezone {
-  margin: 0;
-  color: #fff;
-  font-size: 3rem;
-}
+  &__timezone {
+    margin: 0;
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: 3rem;
+  }
 
-.location__icon {
-  display: block;
-  color: #fff;
-  font-size: 7rem;
-  margin: 1rem;
-}
-
-.location__icon::before {
-  display: block;
+  &__icon {
+    display: block;
+    color: #fff;
+    font-size: 7rem;
+    margin: 2rem;
+  }
 }
 </style>

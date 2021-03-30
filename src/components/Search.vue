@@ -27,41 +27,41 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .search {
   display: flex;
   align-items: center;
   margin: 1rem;
-}
 
-.search__input {
-  outline: none;
-  border: none;
-  border-radius: 10px;
-  background: transparent;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  color: #fff;
-  padding: 0.5rem 1rem;
-}
+  &__input {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    color: #fff;
+    padding: 0.5rem 1rem;
 
-.search__input::placeholder {
-  color: #fff;
-}
+    &::placeholder {
+      color: #fff;
+    }
+  }
 
-.search__button {
-  outline: none;
-  border: 1px solid transparent;
-  color: #fff;
-  background: none;
-  cursor: pointer;
-  margin-left: 1rem;
-  transition: border 0.3s;
-  border-radius: 10px;
-  padding: 0.5rem 1rem;
-}
+  &__button {
+    outline: none;
+    border: 1px solid transparent;
+    color: #fff;
+    background: none;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: border 0.3s;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
 
-.search__button:hover {
-  border: 1px solid #eee;
+    &:hover {
+      border: 1px solid #eee;
+    }
+  }
 }
 </style>

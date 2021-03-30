@@ -18,13 +18,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .weather {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  margin: 1rem;
-  height: 50vh;
 }
 </style>
