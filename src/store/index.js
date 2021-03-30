@@ -34,6 +34,12 @@ export default new Vuex.Store({
     units: (state) => state.units,
   },
   actions: {
+    showMessage({ commit }, msg) {
+      commit('setMessage', { display: true, text: msg })
+    },
+    resetMessage({ commit }) {
+      commit('setMessage', { display: false, text: null })
+    },
     async fetchData({ commit, dispatch }, url) {
       try {
         const data = await requestFetch(url)
@@ -81,12 +87,6 @@ export default new Vuex.Store({
         )
       }, 1000)
     },
-    showMessage({ commit }, msg) {
-      commit('setMessage', { display: true, text: msg })
-    },
-    resetMessage({ commit }) {
-      commit('setMessage', { display: false, text: null })
-    },
     changeUnits({ commit, state }) {
       let weather = JSON.parse(JSON.stringify(state.weather))
       let units = JSON.parse(JSON.stringify(state.units))
@@ -124,5 +124,4 @@ export default new Vuex.Store({
       commit('setUnits', units)
     },
   },
-  modules: {},
 })
