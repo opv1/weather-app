@@ -2,7 +2,7 @@
   <div id="app" class="app">
     <Message />
     <Search />
-    <div class="app__container">
+    <div class="container">
       <Loader v-if="loading" />
       <Weather v-else />
     </div>
@@ -58,12 +58,12 @@ body {
   height: 100vh;
   min-width: 320px;
   max-width: 1440px;
+}
 
-  &__container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 500px;
-  }
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
 }
 </style>

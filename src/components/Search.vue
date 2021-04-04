@@ -38,6 +38,7 @@ export default {
     border: 1px solid #eee;
     border-radius: 10px;
     padding: 0.5rem 1rem;
+    width: 100%;
     color: #fff;
     background: transparent;
 

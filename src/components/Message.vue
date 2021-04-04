@@ -1,7 +1,7 @@
 <template>
-  <span :class="['message', { message__hide: !message.display }]">{{
-    message.text
-  }}</span>
+  <span :class="['message', { message__hide: !message.display }]"
+    >{{ message.text }}
+  </span>
 </template>
 
 <script>
@@ -17,8 +17,12 @@ export default {
 
 <style lang="scss" scoped>
 .message {
-  height: 30px;
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+  height: 60px;
   font-size: 1.5rem;
+  text-align: center;
   color: #fff;
   opacity: 1;
   transition: opacity 0.3s;
