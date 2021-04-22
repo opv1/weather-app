@@ -31,15 +31,19 @@ export default {
 .search {
   display: flex;
   align-items: center;
-  margin: 1rem;
+  margin: 1rem 0;
 
-  &__input {
+  &__input,
+  &__button {
     outline: none;
-    border: 1px solid #eee;
     border-radius: 10px;
     padding: 0.5rem 1rem;
-    width: 100%;
     color: #fff;
+  }
+
+  &__input {
+    border: 1px solid #eee;
+    width: 100%;
     background: transparent;
 
     &::placeholder {
@@ -49,11 +53,7 @@ export default {
 
   &__button {
     margin-left: 1rem;
-    outline: none;
     border: 1px solid transparent;
-    border-radius: 10px;
-    padding: 0.5rem 1rem;
-    color: #fff;
     background: none;
     transition: border 0.3s;
     cursor: pointer;

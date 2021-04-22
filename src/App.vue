@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="app">
+  <div id="app">
     <Message />
     <Search />
     <div class="container">
@@ -49,15 +49,17 @@ body {
   background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
 }
 
-.app {
+#app {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: auto;
-  height: 100vh;
+  padding: 0 1rem;
   min-width: 320px;
+  min-height: 100vh;
   max-width: 1440px;
+  max-height: 100%;
 }
 
 .container {

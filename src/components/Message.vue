@@ -19,7 +19,6 @@ export default {
 .message {
   display: flex;
   align-items: center;
-  margin: 0 1rem;
   height: 60px;
   font-size: 1.5rem;
   text-align: center;

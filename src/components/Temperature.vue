@@ -43,6 +43,7 @@ export default {
     color: #fff;
     transition: background 0.3s;
     cursor: pointer;
+    user-select: none;
 
     &:hover {
       background: rgba(255, 255, 255, 0.3);
