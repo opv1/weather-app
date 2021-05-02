@@ -6,6 +6,7 @@
 ## Description
 
 Stack: Vue + Vuex
+[API](https://openweathermap.org/api)
 
 ## [See the project](https://opv1.github.io/weather-app)
 
