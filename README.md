@@ -9,7 +9,7 @@
 
 Stack: Vue + Vuex
 
-API: [OpenWeather](https://openweathermap.org/api)
+API: [OpenWeather](https://openweathermap.org)
 
 ## Setup
 
