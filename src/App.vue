@@ -59,7 +59,6 @@ body {
   min-width: 320px;
   min-height: 100vh;
   max-width: 1440px;
-  max-height: 100%;
 }
 
 .container {

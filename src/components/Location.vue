@@ -31,6 +31,7 @@ export default {
     margin: 0;
     margin-bottom: 1rem;
     font-size: 3rem;
+    text-align: center;
     color: #fff;
   }
 
