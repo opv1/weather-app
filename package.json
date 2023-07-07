@@ -21,7 +21,7 @@
     "@vue/cli-plugin-babel": "~4.5.14",
     "@vue/cli-plugin-vuex": "~4.5.14",
     "@vue/cli-service": "~4.5.14",
-    "stylelint": "^13.13.1",
+    "stylelint": "^15.10.1",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.4.0",
     "stylelint-order": "^4.1.0",
